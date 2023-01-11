@@ -17,6 +17,11 @@ class Product extends Model
         return $this->belongsTo(Brand::class);
     }
 
+    public function baskets()
+    {
+        return $this->belongsTo(Basket::class)->withPivot('quantity');
+    }
+
     public function getCategory()
     {
         return Category::find($this->category_id);
