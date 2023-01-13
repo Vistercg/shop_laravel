@@ -12,7 +12,7 @@ class BasketController extends Controller
 
     public function __construct()
     {
-        $this->basket = Basket::getBasket();
+            $this->basket = Basket::getBasket();
     }
 
     /**
@@ -76,4 +76,5 @@ class BasketController extends Controller
         // выполняем редирект обратно на страницу корзины
         return redirect()->route('basket.index');
     }
+
 }

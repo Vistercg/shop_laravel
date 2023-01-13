@@ -77,7 +77,6 @@ class Basket extends Model {
         // обновляем поле `updated_at` таблицы `baskets`
         $this->touch();
     }
-
     /**
      * Возвращает объект корзины; если не найден — создает новый
      */
