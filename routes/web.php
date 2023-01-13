@@ -29,4 +29,10 @@ Route::group(['prefix' => 'basket', 'namespace' => '\App\Http\Controllers'], fun
     Route::post('/add/{id}', 'BasketController@add')
         ->where('id', '[0-9]+')
         ->name('basket.add');
+    Route::post('/basket/plus/{id}', 'BasketController@plus')
+        ->where('id', '[0-9]+')
+        ->name('basket.plus');
+    Route::post('/basket/minus/{id}', 'BasketController@minus')
+        ->where('id', '[0-9]+')
+        ->name('basket.minus');
 });
