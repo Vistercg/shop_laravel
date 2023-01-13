@@ -25,14 +25,18 @@ Route::group(['prefix' => 'catalog', 'namespace' => '\App\Http\Controllers'], fu
 
 Route::group(['prefix' => 'basket', 'namespace' => '\App\Http\Controllers'], function () {
     Route::get('/', 'BasketController@index')->name('basket.index');
-    Route::get('/checkout', 'BasketController@checkout')->name('basket.checkout');
-    Route::post('/add/{id}', 'BasketController@add')
+    Route::get('checkout', 'BasketController@checkout')->name('basket.checkout');
+    Route::post('add/{id}', 'BasketController@add')
         ->where('id', '[0-9]+')
         ->name('basket.add');
-    Route::post('/basket/plus/{id}', 'BasketController@plus')
+    Route::post('plus/{id}', 'BasketController@plus')
         ->where('id', '[0-9]+')
         ->name('basket.plus');
-    Route::post('/basket/minus/{id}', 'BasketController@minus')
+    Route::post('minus/{id}', 'BasketController@minus')
         ->where('id', '[0-9]+')
         ->name('basket.minus');
+    Route::post('remove/{id}', 'BasketController@remove')
+        ->where('id', '[0-9]+')
+        ->name('basket.remove');
+    Route::post('clear', 'BasketController@clear')->name('basket.clear');
 });
